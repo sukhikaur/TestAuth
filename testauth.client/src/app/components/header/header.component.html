@@ -1,0 +1,44 @@
+
+<header>
+  <mat-toolbar color="primary">
+
+    <button mat-icon-button [routerLink]="['/']">
+      <mat-icon>
+        home
+      </mat-icon>
+
+    </button>
+    <ul class="flex gap-4">
+      <li>
+        <a mat-flat-button color="primary" [routerLink]="['/blogs']">
+          Blogs
+        </a>
+      </li>
+
+
+      <li>
+        <a mat-flat-button color="primary" [routerLink]="['/about']">
+          AboutUs
+        </a>
+      </li>
+
+
+
+      @if(authService.isLoggedIn){
+      <li>
+        <a mat-flat-button color="primary" [routerLink]="['/admin/blogs']">
+          Manage Blogs
+        </a>
+      </li>
+      }
+
+
+
+      <!--<li>
+    <a mat-flat-button color="primary" [routerLink]="['/login']">
+      Login
+    </a>
+  </li>-->
+    </ul>
+  </mat-toolbar>
+</header>

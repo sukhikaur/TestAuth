@@ -1,0 +1,47 @@
+<div class="flex flex-col justify-center items-center px-20 h-80 ">
+  <h1 class="text-3xl font-bold">Welcome to the home page</h1>
+  <p class="w-6/12">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Nulla id turpis urna. In ut consectetur ante.
+    Sed venenatis sem et ex dictum sodales. Integer est leo, fermentum ac lacus aliquam,
+    tempor sodales massa. Maecenas egestas a nulla laoreet semper.
+    Aliquam nec est laoreet, commodo urna ut, tincidunt nulla.
+    Aliquam vitae tortor lectus. Sed convallis arcu vitae facilisis pulvinar.
+    Proin efficitur ultrices tellus, a pulvinar erat iaculis non.
+    Quisque efficitur nisi ac nisl tincidunt vestibulum. Vestibulum eget commodo lacus.
+    Curabitur efficitur ante eget aliquam aliquam. Mauris condimentum lectus ut libero malesuada fringilla.
+  </p>
+</div>
+
+
+<div class="flex flex-col items-center px-20 mb-10">
+  <h1 class="text-xl font-bold">Featured blogs</h1>
+
+  <div class="flex flex-wrap gap-4">
+    @for(blog of featuredBlogs; track $index){
+    <div class="w-3/12">
+      <mat-card class="example-card" appearance="outlined">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{blog.title}}</mat-card-title>
+        </mat-card-header>
+
+
+        @if(blog.image){
+        <img mat-card-image [src]="blog.image" alt="Photo of a Shiba Inu">
+        }
+
+
+        <mat-card-content>
+          <p>
+           {{blog.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button [routerLink]="'/blog/'+blog.id">Read More</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    }
+  </div>
+</div>
